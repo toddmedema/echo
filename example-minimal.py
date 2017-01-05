@@ -26,8 +26,8 @@ class device_handler(debounce_handler):
     """
     TRIGGERS = {"device": 52000}
 
-    def act(self, client_address, state):
-        print "State", state, "from client @", client_address
+    def act(self, client_address, state, name):
+        print "State", state, "on ", name, "from client @", client_address
         return True
 
 if __name__ == "__main__":
