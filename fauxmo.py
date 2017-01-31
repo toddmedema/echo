@@ -223,11 +223,11 @@ class fauxmo(upnp_device):
             if data.find('<BinaryState>1</BinaryState>') != -1:
                 # on
                 dbg("Responding to ON for %s" % self.name)
-                success = self.action_handler.on(client_address[0])
+                success = self.action_handler.on(client_address[0], self.name)
             elif data.find('<BinaryState>0</BinaryState>') != -1:
                 # off
                 dbg("Responding to OFF for %s" % self.name)
-                success = self.action_handler.off(client_address[0])
+                success = self.action_handler.off(client_address[0], self.name)
             else:
                 dbg("Unknown Binary State request:")
                 dbg(data)
